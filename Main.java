@@ -1,28 +1,18 @@
-package Exercicio2;
-
 public class Main {
     public static void main(String[] args) {
-        // Criando uma Esteira
-        Esteira est = new Esteira(2024, "Pessimo",2000.00, 3.0);
+        Departamento tecnologia = new Departamento("Tecnologia");
 
-        // Criando uma Bicicleta Ergométrica
-        Bicicleta bike = new Bicicleta(2020, "Bom",1500.00, 1.0);
-    
+        Funcionario joao = new Funcionario("João", 3000);
+        Gerente maria = new Gerente("Maria", 5000, 20);
+        Diretor carlos = new Diretor("Carlos", 10000, 30, 2000);
 
-        // Criando um Halteres
-        Halteres halt = new Halteres(2024, "Otimo",200.00, 20.0);
-       
-        // Imprimindo as informações dos equipamentos
-        System.out.println("Esteira:");
-        est.exibirInformacoes();
-        est.exibirInformacao();
+        tecnologia.adicionarFuncionario(joao);
+        tecnologia.adicionarFuncionario(maria);
+        tecnologia.adicionarFuncionario(carlos);
 
-        System.out.println("Bicicleta: ");
-        bike.exibirInformacoes();
-        bike.exibirInformacao();
-        
-        System.out.println("Halteres: ");
-        halt.exibirInformacoes();
-        halt.exibirInformacao();
+        System.out.println("Folha de pagamento total do departamento "+ tecnologia.getNome() + ": " 
+                            + tecnologia.calcularFolhaPagamento());
+        System.out.println("Salários dos funcionários:");
+        tecnologia.imprimirSalariosFuncionarios();  
     }
 }
